@@ -133,16 +133,16 @@ nav{
 
 
 .element:nth-child(1) {
-    background-image: url('../web/bordados.jpg'); 
+    background-image: url('../WEB/bordados.jpg'); 
     
 }
 
 .element:nth-child(2) {
-    background-image: url('../web/moda.jpg'); 
+    background-image: url('../WEB/moda.jpg'); 
 }
 
 .element:nth-child(3) {
-    background-image: url('../web/Acces.jpg'); 
+    background-image: url('../WEB/Acces.jpg'); 
 }
 
 .btn-element{
