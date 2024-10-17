@@ -1,0 +1,337 @@
+body{
+    margin: 0;
+}
+
+header{
+    box-sizing: border-box;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.size-logo{
+    width: 100%;
+
+}
+
+/*cambiar gap*/ 
+
+.div-logo{
+    padding: 0 0 20px 20px;  /*OJOOO  separacion nav*/ 
+    width:300px;
+    height:90px;
+
+}
+.nav-list{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    padding-right: 40px;
+    list-style: none;
+    
+}
+
+.nav_link{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-list li{
+    font-size: 25px;
+    padding: 10px  20px;
+    margin :0 15px;
+
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 30px 10px 0 ;
+}
+
+.btn{
+    background-color: rgb(255, 238, 247);
+    border-radius: 10px;
+    width: 70px;
+    height: 50px;}
+
+.btn a{
+    width: 100%;
+    height: 100%;
+
+}
+
+.btn img{
+    overflow: hidden;
+    height: 55%;
+    width: 45%;
+    padding: 10px 0 10px 18px;
+}
+
+.img-main{
+    width: 100%;
+    height: 590px;
+}
+
+.info{
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.info-grid{  
+    background-color: rgb(255, 255, 255);
+    padding: 40px;
+    height: 190px;
+
+    display: grid;
+    grid-template-columns: 30% 70%;
+    
+}
+
+.info-item{
+    
+    padding: 10px;
+    text-align: justify;
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+.icon-info{
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    padding-top: 35px;
+
+}
+
+.icon-info img{
+    width: 70px;
+    height: 60px;
+}
+
+.container-elements{
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 0 20px 30px 20px;
+    
+}
+
+.element{      
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    height: 300px;
+    background: center / cover;
+
+}
+
+
+.element:nth-child(1) {
+    background-image: url('../web/bordados.jpg'); 
+    
+}
+
+.element:nth-child(2) {
+    background-image: url('../web/moda.jpg'); 
+}
+
+.element:nth-child(3) {
+    background-image: url('../web/Acces.jpg'); 
+}
+
+.btn-element{
+    width: 150px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.692);
+    padding: 10px;
+    text-align: center;
+    visibility: hidden ;
+    transition: visibility 0s, opacity 0.5s linear;
+    opacity: 1;
+    position: relative;
+}
+
+.btn-element a{
+    padding: 20px;
+    text-decoration:none ;
+    font-size:20px;
+    color: #ffdbf2;
+    z-index: 1;
+}
+
+.element:hover .btn-element{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.element {
+    position: relative;
+    transition: opacity 0.5s ease; /* Transición suave */
+}
+
+
+
+/* Al pasar el mouse sobre el .element, se reduce la opacidad */
+.element:hover {
+    opacity: 0.7; /* Ajusta el valor según la opacidad deseada */
+}
+
+
+.element:hover .btn-element {
+    opacity: 1; /* El botón siempre será completamente opaco */
+}
+
+.container-products{
+    background-color: rgb(228, 228, 228);
+    padding: 30px 20px 10px 20px;
+    margin: 20px 0 0 0 ;
+}
+
+.container-products h1{
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.grid{
+    margin: 80px 80px 60px 80px;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,400px)
+
+}
+
+.grid-item{
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.img-items{
+    width: 100%;
+    height: 85%;
+}
+.color{
+    width: 100%;
+    height: 100%;
+}
+
+.price{
+    background-color:  rgb(228, 228, 228);;
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    padding: 5px 0 0 0;
+}
+
+.price h3{
+    margin: 8px 0 10px 0;
+}
+
+.price a{
+    text-decoration: none;
+    color: black;
+}
+
+.box{
+    width: 100%;
+    height: 400px;
+    margin: 0;
+    background: url(../WEB/tela.jpg) top / cover fixed rgb(255, 255, 255);
+    
+}
+
+.content-cards{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 60px 90px;
+    margin-top: 50px;
+}
+
+.card{
+    width: 450px;
+    height: 650px;
+    perspective: 1000px;
+    position: relative; 
+    overflow: hidden; 
+    
+}
+.card-left{
+    margin-top: 0;
+}
+.card-right{
+    margin-top: 150px;
+}
+
+
+
+.card-inner{
+    position: relative; /*Permite desplazar el elemento sin sacarlo del flujo */
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card-front-l, .card-front-r, .card-back {
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    backface-visibility: hidden;
+}
+
+
+
+.card-front-l{
+    background: url(../WEB/iglesia.jpg) center / cover no-repeat;
+    width: 100%; 
+    height: 100%; 
+    backface-visibility: hidden; 
+    z-index: 2;   
+}
+
+.card-front-r{
+    background: url(../WEB/mona.jpg) center / cover no-repeat;
+    width: 100%; 
+    height: 100%; 
+    backface-visibility: hidden;   
+    z-index: 2; 
+}
+
+
+.card-back {
+    background-color: white;
+    color: black;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%; 
+    height: 100%; 
+    backface-visibility: hidden; 
+    z-index: 1;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+footer {
+    background-color: #000000;
+    padding: 20px;
+    text-align: justify;
+    color: white;
+}
