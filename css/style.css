@@ -55,6 +55,7 @@ nav{
 
 .nav-list li{
     font-size: 25px;
+    font-family: Alice, Helvetica, sans-serif;
     padding: 10px  20px;
     margin :0 15px;
 
@@ -149,11 +150,22 @@ nav{
     box-sizing: border-box;
 }
 
+.info h2{
+    font-family: Alice ;
+    font-weight: 300;
+}
+
+.info p{
+    font-family: Raleway;
+    font-weight: 30;
+}
 .info{
     margin: 0;
     display: grid;
     grid-template-columns: repeat(3,1fr);
 }
+
+
 
 .info-grid{  
     background-color: rgb(255, 255, 255);
@@ -270,8 +282,15 @@ nav{
 
 .container-products h1{
     text-align: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Raleway, Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.price h3{
+    text-align: center;
+    font-family: Alice, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
 .grid{
     margin: 80px 80px 60px 80px;
     padding: 50px;
