@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     margin: 0;
     box-sizing: border-box;
@@ -23,12 +25,13 @@ nav{
 }
 
 
+
 /*cambiar gap*/ 
 
 .div-logo{
     overflow: hidden; 
-    width:350px;
-    height:80px;
+    width:300px;
+    height:90px;
 }
 
 .div-logo img{
@@ -40,8 +43,7 @@ nav{
 .nav-list{
     display: flex;
     justify-content: space-evenly;
-    padding-top: 20px;
-    padding-right: 40px;
+    padding: 20px 40px 0 40px;
     list-style: none;
     
 }
@@ -385,6 +387,7 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding: 20px;
     box-sizing: border-box;
     width: 100%; 
