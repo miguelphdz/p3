@@ -1,0 +1,75 @@
+@font-face{
+    font-family:"Monserrat";
+    src: url(../fonts/Monserratt/Montserrat-Thin.ttf) format(truetype);
+    font-weight: 50;
+}
+
+@font-face{
+    font-family:"Monserrat";
+    src: url(../fonts/Monserratt/Montserrat-Regular.ttf) format(truetype);
+    font-weight: 200;
+}
+
+@font-face{
+    font-family:"Monserrat";
+    src: url(../fonts/Monserratt/Montserrat-Medium.ttf) format(truetype);
+    font-weight: 400;
+}
+
+@font-face{
+    font-family:"Monserrat";
+    src: url(../fonts/Monserratt/Montserrat-Bold.ttf) format(truetype);
+    font-weight: 600;
+}
+
+
+@font-face{
+    font-family:"Alice";
+    src: url(../fonts/Alice/Alice-Regular.ttf) format(truetype);
+    font-weight: 100;
+}
+
+@font-face{
+    font-family:"Opensans";
+    src: url(../fonts/OpenSans/OpenSans-Regular.ttf) format(truetype);
+    font-weight: 100;
+}
+
+@font-face{
+    font-family:"Opensans";
+    src: url(../fonts/OpenSans/OpenSans-Medium.ttf) format(truetype);
+    font-weight: 200;
+}
+
+@font-face{
+    font-family:"Opensans";
+    src: url(../fonts/OpenSans/OpenSans-SemiBold.ttf) format(truetype);
+    font-weight: 300;
+}
+
+
+@font-face{
+    font-family:"Opensans";
+    src: url(../fonts/OpenSans/OpenSans-Bold.ttf) format(truetype);
+    font-weight: 400;
+}
+
+
+@font-face{
+    font-family:"Raleway";
+    src: url(../fonts/Raleway/Raleway-Regular.ttf) format(truetype);
+    font-weight: 100;
+}
+
+
+@font-face{
+    font-family:"Raleway";
+    src: url(../fonts/Raleway/Raleway-Medium.ttf) format(truetype);
+    font-weight: 200;
+}
+
+@font-face{
+    font-family:"Raleway";
+    src: url(../fonts/Raleway/Raleway-Bold.ttf) format(truetype);
+    font-weight: 300;
+}
