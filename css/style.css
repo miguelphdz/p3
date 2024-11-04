@@ -143,6 +143,12 @@ nav{
     height: 100%;
 }
 
+.main{
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
 .info{
     margin: 0;
     display: grid;
