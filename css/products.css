@@ -25,7 +25,7 @@ html,body{
     grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
     grid-gap: 30px;
     grid-row-gap:30px ;
-    width: 100%;
+    width: 60%;
     transition: .3s;
 }
 
@@ -70,3 +70,28 @@ html,body{
     cursor: pointer;
 }
 
+.carrito{
+    border: 1px solid #666;
+    width: 35%;
+    margin-top: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: auto;
+    position: sticky !important;
+    top: 0;
+    transition: .3s ;
+}
+
+.carrito .header-carrito{
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding:  30px 0;
+}
+
+.carrito .itemCar{
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #666;
+}
