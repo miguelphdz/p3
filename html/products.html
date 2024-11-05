@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="../css/products.css" >
     <link rel="stylesheet" href="../css/fonts.css" >
     <link rel="icon" type="image/png" href="../WEB/fave.png"  >
+    <script src="https://kit.fontawesome.com/7ee3434711.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+    <!--Productos-->
     <section class="containerP">
         <div class="container-items">
             <div class="producto-item">
@@ -49,7 +51,64 @@
                 <button class="button-item">Agregar al Carrito</button>
             </div>
         </div>
+
+
+        <!--Carrito de compras-->
+        <div class="carrito">
+            <div class="header-carrito">
+                <h2>Carrito</h2>
+            </div>
+            <div class="carrito-items">
+                <div class="itemCar">
+                    <img src="../WEB/rop.png " class="img-item" alt="producto" width="80px">
+                    <div class="info-car">
+                        <span>blusa</span>
+                        <div class="selector-cantidad">
+                            <i class="fa-solid fa-minus resta" ></i>
+                            <input type="text" value="1" class="item-amount" disabled>
+                            <i class="fa-solid fa-plus sum"></i>
+                        </div>
+                        <span class="carrito-price">$15 mx</span>
+                    </div>
+                    <span class="btn-delete">
+                        <i class="fa-solid fa-trash"></i>
+                    </span>
+                </div>
+
+
+                <div class="itemCar">
+                    <img src="../WEB/rop.png " class="img-item" alt="producto" width="80px">
+                    <div class="info-car">
+                        <span>blusa</span>
+                        <div class="selector-cantidad">
+                            <i class="fa-solid fa-minus resta" ></i>
+                            <input type="text" value="2" class="item-amount" disabled>
+                            <i class="fa-solid fa-plus sum"></i>
+                        </div>
+                        <span class="carrito-price">$15 mx</span>
+                    </div>
+                    <span class="btn-delete">
+                        <i class="fa-solid fa-trash"></i>
+                    </span>
+                </div>
+
+                <div class="amout-total">
+                    <div class="fila">
+                        <strong>tu total</strong>
+                        <span class="price-total">
+                            $20
+                        </span>
+                    </div>
+                    <button class="btn-pay"> pagar </button>
+                </div>
+
+            </div>
+        </div>
+        
     </section>
     
+
+    
+
 </body>
 </html>
