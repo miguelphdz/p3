@@ -58,15 +58,17 @@
             <div class="header-carrito">
                 <h2>Carrito</h2>
             </div>
+
+            <!--Elementos del carrito-->
             <div class="carrito-items">
-                <div class="itemCar">
+                <div class="carrito-item">
                     <img src="../WEB/rop.png " class="img-item" alt="producto" width="80px">
                     <div class="info-car">
-                        <span>blusa</span>
+                        <span class="item-title">blusa</span>
                         <div class="selector-cantidad">
                             <i class="fa-solid fa-minus resta" ></i>
-                            <input type="text" value="1" class="item-amount" disabled>
-                            <i class="fa-solid fa-plus sum"></i>
+                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                            <i class="fa-solid fa-plus suma"></i>
                         </div>
                         <span class="carrito-price">$15 mx</span>
                     </div>
@@ -75,15 +77,14 @@
                     </span>
                 </div>
 
-
-                <div class="itemCar">
+                <div class="carrito-item">
                     <img src="../WEB/rop.png " class="img-item" alt="producto" width="80px">
                     <div class="info-car">
-                        <span>blusa</span>
+                        <span class="item-title">blusa</span>
                         <div class="selector-cantidad">
                             <i class="fa-solid fa-minus resta" ></i>
-                            <input type="text" value="2" class="item-amount" disabled>
-                            <i class="fa-solid fa-plus sum"></i>
+                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                            <i class="fa-solid fa-plus suma"></i>
                         </div>
                         <span class="carrito-price">$15 mx</span>
                     </div>
@@ -91,20 +92,20 @@
                         <i class="fa-solid fa-trash"></i>
                     </span>
                 </div>
-
-                <div class="amout-total">
-                    <div class="fila">
-                        <strong>tu total</strong>
-                        <span class="price-total">
-                            $20
-                        </span>
-                    </div>
-                    <button class="btn-pay"> pagar 
-                        <i class="fa-solid fa-bag-shopping"></i>
-                    </button>
-                </div>
-
             </div>
+
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong>tu total</strong>
+                    <span class="carrito-precio-total">
+                        $20
+                    </span>
+                </div>
+                <button class="btn-pay"> pagar 
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </button>
+            </div>
+
         </div>
         
     </section>
