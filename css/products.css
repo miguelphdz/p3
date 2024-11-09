@@ -1,13 +1,11 @@
 *{
     box-sizing: border-box;
-}
-
-html,body{
     margin: 0;
     padding: 0;
     font-family: Alixe, Courier, monospace;
-    font-weight: 80;
 }
+
+
 
 
 .containerP{
@@ -19,54 +17,59 @@ html,body{
     contain: paint;
 }
 
+/*items del contenedor */
 .containerP .container-items{
-    margin: 30px;
+    margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
     grid-gap: 30px;
     grid-row-gap:30px ;
-    width: 60%;
+    width: 100%;
     transition: .3s;
 }
 
 .containerP .container-items .producto-item{
     max-width: 200px;
-    padding: 10px;
     margin: auto;
     border: 1px solid #000;
     padding: 20px;
     transition:  .3s;
 }
 
-.container-items .producto-item:hover{
-    box-shadow: 0 0 10px #000;
-    scale:1.05;
-}
-.container-items .producto-item .img-item{
+.containerP .container-items .producto-item .img-item{
     width: 100%;
 }
 
-.container-items .producto-item h2{
+.containerP .container-items .producto-item:hover{
+    box-shadow: 0 0 10px #000;
+    scale:1.05;
+}
+/*.container-items .producto-item .img-item{
+    width: 100%;
+}*/
+
+.containerP .container-items .producto-item .titulo-item{
     display: block;
-    font-weight: 100;
+    font-weight: bold;
     text-align: center;
     text-transform: uppercase;
 }
 
-.container-items .producto-item span{
+.containerP .container-items .producto-item .price-item{
     display: block;
     font-weight: 100;
     text-align: center;
     font-size: 22px;
 }
 
-.container-items .producto-item .button-item{
+.containerP .container-items .producto-item .button-item{
     display: block;
     margin:  10px auto;
     border: none;
     background-color: #000;
     color: aliceblue;
     padding: 5px 15px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -82,6 +85,10 @@ html,body{
     position: sticky !important;
     top: 0;
     transition: .3s ;
+
+    /*Estilos para ocultar*/
+    margin-right: -100%;
+    opacity: 0;
 }
 
 .carrito .header-carrito{
@@ -96,6 +103,7 @@ html,body{
     align-items: center;
     position: relative;
     border-bottom: 1px solid #666;
+    padding: 20px;
 }
 
 .carrito .carrito-item img{
@@ -137,7 +145,7 @@ html,body{
 }
 
 
-.carrito .carrito-item .carrito-price{
+.carrito .carrito-item .carrito-item-price{
     font-weight: bold;
     display: inline-block;
     font-size: 18px;
@@ -149,6 +157,7 @@ html,body{
     right: 15px;
     top: 15px;
     color: #000;
+    font-size: 20px;
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -167,11 +176,12 @@ html,body{
 
 .carrito-total{
     background-color: #fff;
+    padding: 30px; 
 }
 
 .carrito-total .fila{
     display: flex;
-    justify-items:  center;
+    justify-content: space-between;
     font-size:  22px;
     font-weight: bold;
     margin-bottom: 10px;
