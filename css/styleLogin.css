@@ -1,0 +1,203 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Monserrat', sans-serif;
+}
+
+body{
+    background-color: #FFF2F2;
+    /*background:linear-gradient(to right, #e2bfbf, #922d2d);*/
+    background: url(../WEB/R.jpeg) no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+span{
+    color: transparent;
+}
+.container{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.36);
+    position: relative;  /*no afectar el flujo del documento ajusto posicion del elemento
+    se mueve desde su lugar en el flujo normal, pero todavía ocupa espacio en ese lugar.*/
+    overflow: hidden;
+    width: 700px;
+    max-width: 100%;
+    min-height: 500px;
+}
+
+.container p{
+    padding: 15px 0;
+    /*font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;*/
+}
+
+/*#ffc4c4;*/
+.container button{
+    background-color: #922d2d;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 8px;
+    letter-spacing: 0.6px;
+    margin: 10px 0 15px 0;
+    cursor: pointer;
+}
+
+.container button.hidden{
+    background-color: #fff;
+    color: #922d2d;
+    border-color:#fff; /*ojo*/
+
+}
+
+.container form{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
+
+.container input{
+    background-color: #f1e7ec;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    outline-color:#922D2D ;
+}
+
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition:  all 0.6s ease-in-out;
+}
+
+.sign-in{
+    left:0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.active .sign-in{
+    transform:  translateX(100%);
+
+}
+
+.sign-up{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-up{
+    transform:  translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.toggle-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+    background: url(../WEB/P2R.png) no-repeat center/cover;
+    
+    
+}
+
+.container.active .toggle-container{
+    transform:  translateX(-100%);   
+    border-radius:  0 150px 100px 0;
+    
+    background: none
+    
+}
+
+.toggle{
+    /*  */
+    
+    background: url(../WEB/P2.png) no-repeat;
+    color: #562020;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle{
+    transform: translateX(50%);
+}
+
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left{
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left{
+    transform: translateX(-20%);
+}
+
+
+.toggle-right{
+    right: 0;
+    
+    transform: translateX(10%);
+
+}
+
+
+.container.active .toggle-right{
+    transform: translateX(200%);
+}
