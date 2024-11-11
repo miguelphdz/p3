@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Pagina Producto</title>
+	<link rel="stylesheet" href="../css/paginaProducto.css" />
+</head>
+<body>
+	<header>
+		<h1>Logo</h1>
+	</header>
+
+	<div class="container-title">Producto</div>
+
+	<main>
+		<div class="container-img">
+			<img src="../WEB/blusa1.png" alt="imagen-producto" />
+		</div>
+		<div class="container-info-product">
+			<div class="container-price">
+				<span>$95.00</span>
+				<i class="fa-solid fa-angle-right"></i>
+			</div>
+
+			<div class="container-details-product">
+				<div class="form-group">
+					<label for="size">Talla M</label>
+				</div>
+			</div>
+
+			<!-- Input de cantidad sin contenedor adicional -->
+			<input type="number" placeholder="1" value="1" min="1" class="input-quantity" />
+			<div class="btn-increment-decrement">
+				<i class="fa-solid fa-chevron-up" id="increment"></i>
+				<i class="fa-solid fa-chevron-down" id="decrement"></i>
+			</div>
+
+			<button class="btn-add-to-cart">
+				<i class="fa-solid fa-plus"></i>
+				Añadir al carrito
+			</button>
+
+			<div class="container-description">
+				<div class="title-description">
+					<h4>Descripción</h4>
+					<i class="fa-solid fa-chevron-down"></i>
+				</div>
+				<div class="text-description">
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam iure provident atque voluptatibus reiciendis quae rerum, maxime placeat enim cupiditate voluptatum, temporibus quis iusto. Enim eum qui delectus deleniti similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint autem magni earum est dolorem saepe perferendis repellat ipsam laudantium cum assumenda quidem quam, vero similique? Iusto officiis quod blanditiis iste?</p>
+				</div>
+			</div>
+
+			<div class="container-additional-information">
+				<div class="title-additional-information">
+					<h4>Información adicional</h4>
+					<i class="fa-solid fa-chevron-down"></i>
+				</div>
+				<div class="text-additional-information hidden">
+					<p>-----------</p>
+				</div>
+			</div>
+
+			<div class="container-reviews">
+				<div class="title-reviews">
+					<h4>Reseñas</h4>
+					<i class="fa-solid fa-chevron-down"></i>
+				</div>
+				<div class="text-reviews hidden">
+					<p>-----------</p>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<p>Footer</p>
+	</footer>
+
+	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+	<script src="../javascript/paginaProducto.js"></script>
+</body>
+</html>
