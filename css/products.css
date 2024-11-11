@@ -2,12 +2,85 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Alixe, Courier, monospace;
+    font-family: Alice, Courier, monospace;
+}
+
+/*NAV*/
+body{
+    background-color: rgb(242, 242, 242);
+}
+header{
+    box-sizing: border-box;
+    background-color: #fff;
+}
+nav{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-logo{
+    overflow: hidden; 
+    width:300px;
+    height:90px;
+}
+
+.div-logo img{
+    width: 100%;
+    height: 100%;
 }
 
 
+.nav-list{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 40px 0 40px;
+    list-style: none;
+    
+}
 
+.nav_link{
+    text-decoration: none;
+    color: black;
+}
 
+.nav-list li{
+    font-size: 25px;
+    font-family: Alice, Helvetica, sans-serif;
+    padding: 10px  20px;
+    margin :0 15px;
+
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 30px 20px 30px ;
+}
+
+.btn{
+    background-color: rgb(255, 238, 247);
+    border-radius: 10px;
+    width: 70px;
+    height: 50px;
+}
+
+.btn a{
+    width: 100%;
+    height: 100%;
+
+}
+
+.btn img{
+    overflow: hidden;
+    height: 100%;
+    width: 72%;
+    padding: 10px 0 10px 18px;
+}
+
+/*CONTENEDOR*/
 .containerP{
     max-width: 1200px;
     padding: 10px;
@@ -29,15 +102,32 @@
 }
 
 .containerP .container-items .producto-item{
+    background-color: #fff;
     max-width: 200px;
     margin: auto;
-    border: 1px solid #000;
+    
     padding: 20px;
     transition:  .3s;
 }
 
 .containerP .container-items .producto-item .img-item{
     width: 100%;
+}
+
+.img-container {
+    width: 100%;          /* Ajusta el ancho para que se adapte al contenedor padre */
+    height: 200px; 
+    padding-bottom: 10px;       /* Puedes cambiar esta altura según tus necesidades */
+    display: flex;
+    align-items: center;  /* Centra verticalmente la imagen dentro del contenedor */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    overflow: hidden;     /* Oculta el exceso de imagen si es necesario */
+}
+
+.img-container .img-item {
+    width: auto;          /* Ajusta automáticamente el ancho de la imagen */
+    height: 100%;         /* La altura ocupará el 100% del contenedor */
+    object-fit: cover;    /* Ajusta la imagen para que cubra el contenedor sin deformarse */
 }
 
 .containerP .container-items .producto-item:hover{
@@ -50,9 +140,9 @@
 
 .containerP .container-items .producto-item .titulo-item{
     display: block;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
+    text-align: center; 
+    font-size: 15px;
+    font-family: Raleway,sans-serif;
 }
 
 .containerP .container-items .producto-item .price-item{
@@ -112,9 +202,10 @@
 
 .carrito .carrito-item .item-title{
     display: block;
-    font-family: bold;
     margin-bottom: 10px;
-    text-transform: uppercase;
+    font-family: Raleway,sans-serif;
+    
+    
 }
 
 .carrito .carrito-item .selector-cantidad{
