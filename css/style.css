@@ -427,69 +427,32 @@ nav{
 
 
 /* Estilo para el footer */
-/* Estilo general del footer */
-.custom-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #f8f9fa;
-    color: #6c757d;
+
+.fondo{
+    background: #ffffff;;
     width: 100%;
-    box-sizing: border-box;
-}
-
-/* Estilo de la navegación izquierda */
-.footer-nav {
+    height: 250px;
     display: flex;
-    gap: 20px;
-}
-
-.footer-nav a {
-    color: #6c757d;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
-
-.footer-nav a:hover {
-    color: #007bff;
-}
-
-/* Estilo del logo central */
-.footer-logo {
-    display: flex;
+    justify-content:space-around;
     align-items: center;
-    justify-content: center;
+    color: #000000;
+}
+.grid_footer{
+    
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 40px 40px;
+    text-align: center;
+    padding: 12px 10px;
+
 }
 
-.logo {
-    height: 40px; /* Ajusta el tamaño del logo según sea necesario */
-}
-
-/* Estilo del nombre de la compañía a la derecha */
-.company-name {
-    font-size: 1rem;
-    color: #6c757d;
-}
-
-/* Responsividad */
-@media (max-width: 768px) {
-    .custom-footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-    
-    .footer-nav {
-        order: 1;
-    }
-    
-    .footer-logo {
-        order: 2;
-    }
-    
-    .company-name {
-        order: 3;
-    }
+/* Style the footer */
+footer {
+    width: 100%;
+    background-color: #000000;
+    padding: 20px;
+    text-align: justify;
+    color: white;
 }
