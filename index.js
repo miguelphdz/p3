@@ -1,12 +1,19 @@
 const express = require('express');
 const { Pool } = require('pg');
+const cors = require('cors'); // Importa cors
 require('dotenv').config();
 
 const app = express();
 
+app.use(cors({
+  origin: 'https://p3-e7kwcsq8t-miguels-projects-7c70e0af.vercel.app' // Cambia esto por la URL exacta de tu aplicación en Vercel
+}));
+
+app.use(express.json());
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false }, // Requerido para conexiones seguras en Railway
+  ssl: { rejectUnauthorized: false },
 });
 
 // Intento de conexión para verificar que la base de datos esté disponible
