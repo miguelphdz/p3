@@ -1,41 +1,31 @@
-const registerBtn = document.getElementById('registrar');
-const container = document.getElementById('container');
-const loginBtn = document.getElementById('login');
+const SUPABASE_URL = 'https://vnkohvizfizhindrprxj.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZua29odml6Zml6aGluZHJwcnhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE1Mzk2NzQsImV4cCI6MjA0NzExNTY3NH0.bdnM5VJcQqsMPSQgdLmZQ-d6OLxT1Je-s5N2uPgWWAw';
 
+const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-registerBtn.addEventListener('click', ()=>{
-    container.classList.add("active");
-});
-
-
-loginBtn.addEventListener('click', ()=>{
-    container.classList.remove("active");
-});
-
-async function login(event) {
+async function login(event) {   
     event.preventDefault();
-
+    
     const correo = document.querySelector('input[name="correo"]').value;
     const contraseña = document.querySelector('input[name="contraseña"]').value;
 
-    try {
-        const response = await fetch('http://127.0.0.1:5500/p3/html/login.html', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ correo, contraseña }),
-        });
+    const { data, error } = await supabase.auth.signInWithPassword({
+        email: correo,
+        password: contraseña,
+    });
 
-        const data = await response.json(); // Leer el mensaje del servidor
+    if (error) {
+        console.error("Error al iniciar sesión:", error.message);
+        alert("Error al iniciar sesión: " + error.message);
+    } else {
+        console.log("Inicio de sesión exitoso:", data);
+        alert("Bienvenido/a. Inicio de sesión exitoso.");
+        // Redirige al usuario a la página principal de la tienda después del inicio de sesión
+        window.location.href = "/index.html";
+    }
+    try{
 
-        if (response.ok) {
-            window.location.href = '/index.html'; // Redirige si las credenciales son correctas
-        } else {
-            alert(data.mensaje); // Muestra el mensaje de error específico
-        }
-    } catch (error) {
-        console.error('Error en el inicio de sesión:', error);
-        alert('Error en el servidor. Inténtalo de nuevo más tarde.');
+    }catch(err){
+
     }
 }
-
-
