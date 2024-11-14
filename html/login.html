@@ -63,6 +63,21 @@
 
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+        const registerBtn = document.getElementById('registrar');
+        const container = document.getElementById('container');
+        const loginBtn = document.getElementById('login');
+
+
+registerBtn.addEventListener('click', ()=>{
+    container.classList.add("active");
+});
+
+
+loginBtn.addEventListener('click', ()=>{
+    container.classList.remove("active");
+});
+
+
         async function login(event) {
             event.preventDefault();
 
