@@ -52,12 +52,16 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script>
-         const SUPABASE_URL = 'https://vnkohvizfizhindrprxj.supabase.co';
+<!-- Cargar el SDK de Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<!-- Inicialización de Supabase y la función de login -->
+<script>
+    window.onload = function() {
+        const SUPABASE_URL = 'https://vnkohvizfizhindrprxj.supabase.co';
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZua29odml6Zml6aGluZHJwcnhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE1Mzk2NzQsImV4cCI6MjA0NzExNTY3NH0.bdnM5VJcQqsMPSQgdLmZQ-d6OLxT1Je-s5N2uPgWWAw';
 
-        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
         async function login(event) {
             event.preventDefault();
@@ -80,7 +84,11 @@
                 window.location.href = "/index.html";
             }
         }
-    </script>
+
+        // Asigna la función login a window para que esté disponible globalmente
+        window.login = login;
+    };
+</script>
     
 
 </body>
