@@ -12,8 +12,8 @@
 
     <div class="container" id="container">
         <!--primer div  registrarse-->
-        <div class="form-container sign-up">
-            <form>
+        <div class="form-container singup">
+            <form  id="singupForm" onsubmit="signup(event)">
                 <h1>Crear cuenta</h1>
                 <span>sadsdsdsdsdsd</span>
                 <input type="text" placeholder="Nombre">
@@ -84,9 +84,35 @@
                 window.location.href = "/index.html";
             }
         }
+        async function signup(event) {
+            event.preventDefault();
+
+            const nombre = document.querySelector('input[placeholder="Nombre"]').value;
+            const correo = document.querySelector('input[placeholder="Correo"]').value;
+            const contraseña = document.querySelector('input[placeholder="Contraseña"]').value;
+
+            const { data, error } = await supabase.auth.signUp({
+                email: correo,
+                password: contraseña,
+                options: {
+                    data: {
+                        nombre: nombre
+                    }
+                }
+            });
+
+            if (error) {
+                console.error("Error al registrarse:", error.message);
+                alert("Error al registrarse: " + error.message);
+            } else {
+                console.log("Usuario registrado:", data);
+                alert("Registro exitoso. Ahora puedes iniciar sesión.");
+            }
+    }
 
         // Asigna la función login a window para que esté disponible globalmente
         window.login = login;
+        window.signUp = signUp;
     };
 </script>
     
