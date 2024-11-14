@@ -52,28 +52,3 @@ button {
     background-color: #ffd1fa;
     color: wh
 }
-
-.container.active .signup {
-    display: block; /* Mostrar el formulario de registro cuando 'active' está presente */
-}
-
-.container.active .sign-in {
-    display: none; /* Ocultar el formulario de inicio de sesión cuando 'active' está presente */
-}
-
-.container:not(.active) .signup {
-    display: none; /* Ocultar formulario de registro cuando 'active' NO está presente */
-}
-
-.container:not(.active) .sign-in {
-    display: block; /* Mostrar formulario de inicio de sesión cuando 'active' NO está presente */
-}
-
-form {
-    width: 100%;
-    display: none; /* Por defecto los formularios no se muestran */
-}
-
-form.active {
-    display: block; /* El formulario activo se muestra */
-}
