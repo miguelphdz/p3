@@ -3,9 +3,9 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-async function login(event) {   
+async function login(event) {
     event.preventDefault();
-    
+
     const correo = document.querySelector('input[name="correo"]').value;
     const contraseña = document.querySelector('input[name="contraseña"]').value;
 
@@ -22,10 +22,5 @@ async function login(event) {
         alert("Bienvenido/a. Inicio de sesión exitoso.");
         // Redirige al usuario a la página principal de la tienda después del inicio de sesión
         window.location.href = "/index.html";
-    }
-    try{
-
-    }catch(err){
-
     }
 }
