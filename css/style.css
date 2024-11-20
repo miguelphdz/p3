@@ -131,13 +131,20 @@ nav{
     padding: 30px;
 }
 
-.navPuntos{
+.navPuntos {
     background: transparent;
     display: flex;
-    justify-content: space-between;
-    padding: 10px 750px;
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    padding: 10px; 
+    margin: 0 auto; 
 }
 
+.navPuntos a {
+    font-size: 20px; 
+    color: black; 
+}
 .item-Carousel-img img{
     width: 100%;
     height: 100%;
@@ -230,22 +237,27 @@ nav{
     background-image: url('../WEB/Acces.jpg'); 
 }
 
-.btn-element{
+.btn-element {
     width: 150px;
     height: 30px;
-    background-color: rgba(0, 0, 0, 0.692);
-    padding: 10px;
+    background-color: rgb(0, 0, 0);
     text-align: center;
-    visibility: hidden ;
+    display: flex; /* Esto te permite usar flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    visibility: hidden;
     transition: visibility 0s, opacity 0.5s linear;
-    opacity: 1;
-    position: relative;
+    opacity: 0;
+    position: absolute; /* Importante para que el botón esté encima del `element` */
+    top: 50%; /* Mueve el centro hacia la mitad */
+    left: 50%; /* Mueve el centro hacia la mitad */
+    transform: translate(-50%, -50%); /* Asegura que el botón esté perfectamente centrado */
 }
 
-.btn-element a{
+.btn-element a {
     padding: 20px;
-    text-decoration:none ;
-    font-size:20px;
+    text-decoration: none;
+    font-size: 20px;
     color: #ffdbf2;
     z-index: 1;
 }
@@ -260,7 +272,6 @@ nav{
     position: relative;
     transition: opacity 0.5s ease; /* Transición suave */
 }
-
 
 
 /* Al pasar el mouse sobre el .element, se reduce la opacidad */
