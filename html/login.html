@@ -18,17 +18,15 @@
             const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
     
             const container = document.getElementById('container');
-            const toggleSignup = document.getElementById('toggleSignup');
-            const toggleLogin = document.getElementById('toggleLogin');
-        
-            // Agregar clase "active" para mostrar el formulario de registro
-            toggleSignup.addEventListener('click', () => {
-                container.classList.add('active');
+            const registerBtn = document.getElementById('register');
+            const loginBtn = document.getElementById('login');
+
+            registerBtn.addEventListener('click', () => {
+                container.classList.add("active");
             });
-        
-            // Eliminar clase "active" para mostrar el formulario de inicio de sesión
-            toggleLogin.addEventListener('click', () => {
-                container.classList.remove('active');
+
+            loginBtn.addEventListener('click', () => {
+                container.classList.remove("active");
             });
     
     
@@ -75,55 +73,54 @@
                     alert("Error al registrarse: " + error.message);
                 } else {
                     console.log("Usuario registrado:", data);
-                    alert("Registro exitoso. Ahora puedes iniciar sesión.");
+                    alert("Registro exitoso. Revisa tu correo para verificarlo..");
                 }
         }
     
             // Asigna la función login a window para que esté disponible globalmente
             window.login = login;
-           window.signUp = signUp;
+           window.signup = signup;
         };
     </script>
 
-    <div class="container" id="container">
-        <!--primer div  registrarse-->
-        <div class="form-container singup">
-            <form  id="singupForm" onsubmit="signup(event)">
-                <h1>Crear cuenta</h1>
-                <input type="text" placeholder="Nombre">
-                <input type="Email" placeholder="Correo">
-                <input type="password" placeholder="Contraseña">
-                <button id="signupBtn">Registrate</button>
-            </form>
-        </div>
-
-        <!--INICIAR SESION-->
-
-        <div class="form-container sign-in">
-            <form id="loginForm" onsubmit="login(event)">
-                <h1>Iniciar sesión</h1>
-                <input type="email" name="correo" placeholder="Correo" required>
-                <input type="password" name="contraseña" placeholder="Contraseña" required>
-                <button type="submit" id="loginBtn">Iniciar sesión</button>
-                <a href="#">¿Olvidaste tu contraseña?</a>
-            </form>
-        </div>
-
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h2>Bienvenido</h2>     
-                    <br>   
-                    <button class="hidden" id="toggleLogin">Iniciar sesion</button>
-                </div>
-
-                <div class="toggle-panel toggle-right">
-                    <h2>¿No tienes cuenta personal?</h2>
-                    
-                    <button class="hidden" id="toggleSignup">Registrate</button>
-                </div>
-            </div>
-        </div>
-    </div>
+<body>
+    <!--INICIAR SESION-->
+      <div class="container" id="container">
+          <div class="form-container sign-up">
+              <form>
+                  <h1>Crear cuenta</h1>
+                  <input type="text" placeholder="Nombre">
+                  <input type="email" placeholder="Correo">
+                  <input type="password" placeholder="Contraseña">
+                  <button onclick="signup(event)">Registrate</button>
+              </form>
+          </div>
+          <div class="form-container sign-in">
+              <form>
+                  <h1>Iniciar sesión</h1>
+                  <input type="email" placeholder="Correo" name="correo">
+                  <input type="password" placeholder="Contraseña" name="contraseña">
+                  <button type="submit" onclick="login(event)">Iniciar sesión</button>
+              </form>
+          </div>
+  
+            <!--INICIAR SESION-->
+          <div class="toggle-container">
+              <div class="toggle">
+                  <div class="toggle-panel toggle-left">
+                      <h1>¿Listo?</h1>
+      
+                      <button class="hidden" id="login">Iniciar sesion</button>
+                  </div>
+                  
+                  <div class="toggle-panel toggle-right">
+                      <h1>Hola!</h1>
+                      <p >si no tienes cuenta personal</p>
+                      
+                      <button class="hidden" id="register">Registrate</button>
+                  </div>
+              </div>
+          </div>
+      </div>
 </body>
 </html>
