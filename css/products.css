@@ -6,8 +6,9 @@
 }
 
 /*NAV*/
-body{
-    background-color: rgb(242, 242, 242);
+body{ 
+   /*background-color: rgb(181, 165, 178);*/
+  background-color: #e9b8d0;
 }
 header{
     box-sizing: border-box;
@@ -82,32 +83,39 @@ nav{
 
 /*CONTENEDOR*/
 .containerP{
-    max-width: 1200px;
+    max-width: 1200px; /*siquiero cambiar el tamaño del contenedor de elementos*/
     padding: 10px;
     margin: auto;
     display: flex;
     justify-content: space-between;
     contain: paint;
+    background-color: #fff;
+    
 }
 
 /*items del contenedor */
-.containerP .container-items{
-    margin-top: 30px;
+.containerP .container-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    grid-gap: 30px;
-    grid-row-gap:30px ;
-    width: 100%;
-    transition: .3s;
+    /*grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas de tamaño igual */
+    gap: 20px;
+    gap: 20px;
+    width: 100%; 
+    padding: 0;  
+    transition: grid-template-columns 0.3s ease;
+    box-sizing: border-box; 
 }
 
-.containerP .container-items .producto-item{
+body.cart-visible .container-items {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.producto-item {
+    margin: 0; /* Asegura que no haya márgenes adicionales */
+    /* Ajusta el padding para controlar el espacio dentro de cada producto */
+    box-sizing: border-box;
     background-color: #fff;
-    max-width: 200px;
-    margin: auto;
-    
-    padding: 20px;
-    transition:  .3s;
+    border-radius: 15px;
 }
 
 .containerP .container-items .producto-item .img-item{
@@ -116,12 +124,14 @@ nav{
 
 .img-container {
     width: 100%;          /* Ajusta el ancho para que se adapte al contenedor padre */
-    height: 200px; 
+    height: 300px; 
     padding-bottom: 10px;       /* Puedes cambiar esta altura según tus necesidades */
     display: flex;
     align-items: center;  /* Centra verticalmente la imagen dentro del contenedor */
     justify-content: center; /* Centra horizontalmente la imagen */
     overflow: hidden;     /* Oculta el exceso de imagen si es necesario */
+    background-color: #fff;
+    border-radius: 15px;
 }
 
 .img-container .img-item {
@@ -142,34 +152,36 @@ nav{
     display: block;
     text-align: center; 
     font-size: 15px;
-    font-family: Raleway,sans-serif;
+    font-family: sans-serif;
 }
 
 .containerP .container-items .producto-item .price-item{
     display: block;
-    font-weight: 100;
+    font-weight: 300;
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .containerP .container-items .producto-item .button-item{
     display: block;
     margin:  10px auto;
     border: none;
-    background-color: #000;
+    background-color: #e9b8d0;
     color: aliceblue;
-    padding: 5px 15px;
-    border-radius: 5px;
+    padding: 10px 15px;
+    border-radius: 10px;
     cursor: pointer;
+    width: 90%;
 }
 
 /*seccion carrito*/
 
 .carrito{
-    border: 1px solid #666;
+    
     width: 35%;
-    margin-top: 30px;
-    border-radius: 10px;
+
+    margin-left: 20px;
+    
     overflow: hidden;
     margin-bottom: auto;
     position: sticky !important;
@@ -182,7 +194,7 @@ nav{
 }
 
 .carrito .header-carrito{
-    background-color: #000;
+    background-color: #4a0404;
     color: #fff;
     text-align: center;
     padding:  30px 0;
@@ -192,7 +204,7 @@ nav{
     display: flex;
     align-items: center;
     position: relative;
-    border-bottom: 1px solid #666;
+    border-bottom: 1px solid #312d2d;
     padding: 20px;
 }
 
@@ -225,13 +237,11 @@ nav{
 
 
 .carrito .carrito-item .selector-cantidad i{
-    font-size: 18px;
+    font-size: 10px;
     width: 32px;
     height: 32px;
     line-height: 32px;
     text-align: center;
-    border-radius: 50%;
-    border: 1px solid #000;
     cursor: pointer;
 }
 
@@ -245,7 +255,7 @@ nav{
 
 .carrito .carrito-item .btn-delete{
     position: absolute;
-    right: 15px;
+    right: 1px;
     top: 15px;
     color: #000;
     font-size: 20px;
@@ -253,8 +263,7 @@ nav{
     height: 40px;
     line-height: 40px;
     text-align: center;
-    border-radius: 50%;
-    border: 1px solid #000;
+    border: none;
     cursor: pointer;
     display: block;
     background: transparent;
