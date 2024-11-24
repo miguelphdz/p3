@@ -9,128 +9,118 @@
 </head>
 
 <body>
-
-    <div class="container" id="container">
-        <!--primer div  registrarse-->
-        <div class="form-container sing-up">
-            <form  id="singupForm" onsubmit="signup(event)">
-                <h1>Crear cuenta</h1>
-                <span>sadsdsdsdsdsd</span>
-                <input type="text" placeholder="Nombre">
-                <input type="Email" placeholder="Correo">
-                <input type="password" placeholder="Contraseña">
-                <button>Registrate</button>
-            </form>
-        </div>
-
-        <!--INICIAR SESION-->
-
-        <div class="form-container sign-in">
-            <form id="loginForm" onsubmit="login(event)">
-                <h1>Iniciar sesión</h1>
-                <input type="email" name="correo" placeholder="Correo" required>
-                <input type="password" name="contraseña" placeholder="Contraseña" required>
-                <button type="submit">Iniciar sesión</button>
-                <a href="#">¿Olvidaste tu contraseña?</a>
-            </form>
-        </div>
-
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h2>Bienvenido</h2>     
-                    <br>   
-                    <button class="hidden" id="login">Iniciar sesion</button>
-                </div>
-
-                <div class="toggle-panel toggle-right">
-                    <h2>¿No tienes cuenta personal?</h2>
-                    
-                    <button class="hidden" id="registrar">Registrate</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<!-- Cargar el SDK de Supabase -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-
-<!-- Inicialización de Supabase y la función de login -->
-<script>
-    window.onload = function() {
-        const SUPABASE_URL = 'https://vnkohvizfizhindrprxj.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZua29odml6Zml6aGluZHJwcnhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE1Mzk2NzQsImV4cCI6MjA0NzExNTY3NH0.bdnM5VJcQqsMPSQgdLmZQ-d6OLxT1Je-s5N2uPgWWAw';
-
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-        const registerBtn = document.getElementById('registrar');
-        const container = document.getElementById('container');
-        const loginBtn = document.getElementById('login');
- 
-
-registerBtn.addEventListener('click', ()=>{
-    container.classList.add("active");
-});
-
-
-loginBtn.addEventListener('click', ()=>{
-    container.classList.remove("active");
-});
-
-
-        async function login(event) {
-            event.preventDefault();
-
-            const correo = document.querySelector('input[name="correo"]').value;
-            const contraseña = document.querySelector('input[name="contraseña"]').value;
-
-            const { data, error } = await supabase.auth.signInWithPassword({
-                email: correo,
-                password: contraseña,
-            });
-
-            if (error) {
-                console.error("Error al iniciar sesión:", error.message);
-                alert("Error al iniciar sesión: " + error.message);
-            } else {
-                console.log("Inicio de sesión exitoso:", data);
-                alert("Bienvenido/a. Inicio de sesión exitoso.");
-                // Redirige al usuario a la página principal de la tienda después del inicio de sesión
-                window.location.href = "/index.html";
-            }
-        }
-        async function signup(event) {
-            event.preventDefault();
-
-            const nombre = document.querySelector('input[placeholder="Nombre"]').value;
-            const correo = document.querySelector('input[placeholder="Correo"]').value;
-            const contraseña = document.querySelector('input[placeholder="Contraseña"]').value;
-
-            const { data, error } = await supabase.auth.signUp({
-                email: correo,
-                password: contraseña,
-                options: {
-                    data: {
-                        nombre: nombre
-                    }
-                }
-            });
-
-            if (error) {
-                console.error("Error al registrarse:", error.message);
-                alert("Error al registrarse: " + error.message);
-            } else {
-                console.log("Usuario registrado:", data);
-                alert("Registro exitoso. Ahora puedes iniciar sesión.");
-            }
-    }
-
-        // Asigna la función login a window para que esté disponible globalmente
-        window.login = login;
-       // window.signUp = signUp;
-    };
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script>
+        window.onload = function() {
+            const SUPABASE_URL = 'https://vnkohvizfizhindrprxj.supabase.co';
+            const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZua29odml6Zml6aGluZHJwcnhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE1Mzk2NzQsImV4cCI6MjA0NzExNTY3NH0.bdnM5VJcQqsMPSQgdLmZQ-d6OLxT1Je-s5N2uPgWWAw';
     
+            const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    
+            const container = document.getElementById('container');
+            const registerBtn = document.getElementById('register');
+            const loginBtn = document.getElementById('login');
 
+            registerBtn.addEventListener('click', () => {
+                container.classList.add("active");
+            });
+
+            loginBtn.addEventListener('click', () => {
+                container.classList.remove("active");
+            });
+    
+    
+            async function login(event) {
+                event.preventDefault();
+        
+                const correo = document.querySelector('input[name="correo"]').value;
+                const contraseña = document.querySelector('input[name="contraseña"]').value;
+        
+                const { data, error } = await supabase.auth.signInWithPassword({
+                    email: correo,
+                    password: contraseña,
+                });
+        
+                if (error) {
+                    console.error("Error al iniciar sesión:", error.message);
+                    alert("Error al iniciar sesión: " + error.message);
+                } else {
+                    console.log("Inicio de sesión exitoso:", data);
+                    alert("Bienvenido/a. Inicio de sesión exitoso.");
+                    // Redirige al usuario a la página principal de la tienda después del inicio de sesión
+                    window.location.href = "/index.html";
+                }
+            }
+            async function signup(event) {
+                event.preventDefault();
+    
+                const nombre = document.querySelector('input[placeholder="Nombre"]').value;
+                const correo = document.querySelector('input[placeholder="Correo"]').value;
+                const contraseña = document.querySelector('input[placeholder="Contraseña"]').value;
+    
+                const { data, error } = await supabase.auth.signUp({
+                    email: correo,
+                    password: contraseña,
+                    options: {
+                        data: {
+                            nombre: nombre
+                        }
+                    }
+                });
+    
+                if (error) {
+                    console.error("Error al registrarse:", error.message);
+                    alert("Error al registrarse: " + error.message);
+                } else {
+                    console.log("Usuario registrado:", data);
+                    alert("Registro exitoso. Revisa tu correo para verificarlo..");
+                }
+        }
+    
+            // Asigna la función login a window para que esté disponible globalmente
+            window.login = login;
+           window.signup = signup;
+        };
+    </script>
+
+<body>
+    <!--INICIAR SESION-->
+      <div class="container" id="container">
+          <div class="form-container sign-up">
+              <form>
+                  <h1>Crear cuenta</h1>
+                  <input type="text" placeholder="Nombre">
+                  <input type="email" placeholder="Correo">
+                  <input type="password" placeholder="Contraseña">
+                  <button onclick="signup(event)">Registrate</button>
+              </form>
+          </div>
+          <div class="form-container sign-in">
+              <form>
+                  <h1>Iniciar sesión</h1>
+                  <input type="email" placeholder="Correo" name="correo">
+                  <input type="password" placeholder="Contraseña" name="contraseña">
+                  <button type="submit" onclick="login(event)">Iniciar sesión</button>
+              </form>
+          </div>
+  
+            <!--INICIAR SESION-->
+          <div class="toggle-container">
+              <div class="toggle">
+                  <div class="toggle-panel toggle-left">
+                      <h1>¿Listo?</h1>
+      
+                      <button class="hidden" id="login">Iniciar sesion</button>
+                  </div>
+                  
+                  <div class="toggle-panel toggle-right">
+                      <h1>Hola!</h1>
+                      <p >si no tienes cuenta personal</p>
+                      
+                      <button class="hidden" id="register">Registrate</button>
+                  </div>
+              </div>
+          </div>
+      </div>
 </body>
 </html>
