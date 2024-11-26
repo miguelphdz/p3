@@ -6,7 +6,7 @@ const TABLE_NAME = 'producto'; // Nombre de la tabla
 // Función para hacer una consulta GET a la tabla 'producto'
 async function getData() {
     try {
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}?select=descripcion,precio,imagen_url&id=gte.1&id=lte.8`, {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}?select=descripcion,precio,imagen_url&id=gte.1&id=lte.9`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -37,17 +37,17 @@ function displayData(data) {
     container.innerHTML = ''; // Limpia el contenedor
 
     data.forEach(item => {
-        const div = document.createElement('div');
+        const div = document.createElement('grid-item');
         div.innerHTML = `
-            <div class="grid-item">
+            
                 <div class="img-items">                        
                     <img src="${item.imagen_url}" alt="" class="color">
                 </div>
                 <div class="price">
-                    <p>${item.descripcion}</p>
+                    <a href="html/products.html">${item.descripcion}</a>
                     <h3>$${item.precio} mx </h3>
                 </div>
-            </div>
+            
         `;
         container.appendChild(div);
     });
