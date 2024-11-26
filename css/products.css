@@ -86,6 +86,7 @@ nav{
     max-width: 1200px; /*siquiero cambiar el tamaño del contenedor de elementos*/
     padding: 10px;
     margin: auto;
+    margin-top: 15px;
     display: flex;
     justify-content: space-between;
     contain: paint;
