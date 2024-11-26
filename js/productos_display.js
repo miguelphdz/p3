@@ -37,10 +37,11 @@ function displayData(data) {
     container.innerHTML = ''; // Limpia el contenedor
 
     data.forEach(item => {
-        // Cambié 'producto-item' a 'div' y le agregué una clase
+        // Crear un contenedor para el producto
         const div = document.createElement('div');
-        div.classList.add('producto-item'); // Agrego la clase para poder aplicar CSS
+        div.classList.add('producto-item');
 
+        // Contenido del producto
         div.innerHTML = `
             <div class="img-container">
                 <img src="${item.imagen_url}" class="img-item" alt="producto">
@@ -49,7 +50,13 @@ function displayData(data) {
             <span class="price-item">$${item.precio}</span>
             <button class="button-item">Agregar al Carrito</button>
         `;
+        
+        // Agregar el contenedor al DOM
         container.appendChild(div);
+
+        // Agregar el event listener al botón "Agregar al Carrito"
+        const button = div.querySelector('.button-item');
+        button.addEventListener('click', agregarAlCarritoClicked);
     });
 }
 
