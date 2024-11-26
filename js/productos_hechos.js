@@ -6,7 +6,7 @@ const TABLE_NAME = 'producto'; // Nombre de la tabla
 // Función para hacer una consulta GET a la tabla 'producto'
 async function getData() {
     try {
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}?select=descripcion,precio,imagen_url&id=gte.1&id=lte.9`, {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}?select=descripcion,precio,imagen_url&id=gte.1&id=lte.4`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
