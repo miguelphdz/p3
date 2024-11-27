@@ -48,7 +48,7 @@ function displayData(data) {
             </div>
             <h2 class="titulo-item">${item.descripcion}</h2>
             <span class="price-item">$${item.precio}</span>
-            <button class="button-item">Agregar al Carrito</button>
+            <button class="button-item" data-id="${item.id}">Agregar al Carrito</button>
         `;
         
         // Agregar el contenedor al DOM
@@ -59,6 +59,7 @@ function displayData(data) {
         button.addEventListener('click', agregarAlCarritoClicked);
     });
 }
+
 
 // Llama a la función para obtener datos al cargar la página
 document.addEventListener('DOMContentLoaded', getData);

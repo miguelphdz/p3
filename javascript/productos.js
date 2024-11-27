@@ -110,29 +110,31 @@ function agregarAlCarritoClicked(event) {
     var titulo = item.getElementsByClassName('titulo-item')[0].innerText;
     var precio = item.getElementsByClassName('price-item')[0].innerText;
     var imagenSrc = item.getElementsByClassName('img-item')[0].src;
-
-    agregarItemAlcarrito(titulo, precio, imagenSrc);
+    var idProducto = button.getAttribute('data-id'); // Obtén el ID del producto
+    
+    agregarItemAlcarrito(idProducto, titulo, precio, imagenSrc); // Pasa el ID
     hacerVisibleCarrito();
 }
 
-function agregarItemAlcarrito(titulo, precio, imagenSrc) {
-    var item = document.createElement('div');
+function agregarItemAlcarrito(idProducto, titulo, precio, imagenSrc) {
+    const item = document.createElement('div');
     item.classList.add('producto-item');
-    var itemsCarrito = document.getElementsByClassName('carrito-items')[0];
+    const itemsCarrito = document.getElementsByClassName('carrito-items')[0];
 
-    var nombresItemsCarrito = itemsCarrito.getElementsByClassName('item-title');
-    for (var i = 0; i < nombresItemsCarrito.length; i++) {
+    // Verifica si ya está en el carrito
+    const nombresItemsCarrito = itemsCarrito.getElementsByClassName('item-title');
+    for (let i = 0; i < nombresItemsCarrito.length; i++) {
         if (nombresItemsCarrito[i].innerText == titulo) {
-            alert("El item ya está dentro del carrito");
+            alert('El item ya está dentro del carrito');
             return;
         }
     }
 
-    var itemCarritoContenido = `
+    const itemCarritoContenido = `
     <div class="carrito-item">
-        <img src="${imagenSrc}" alt="producto" width="80px">
+        <img src="${imagenSrc}" class="pasarUrl"alt="producto" width="80px">
         <div class="info-car">
-            <span class="item-title">${titulo}</span>
+            <span class="item-title" data-id="${idProducto}">${titulo}</span>
             <div class="selector-cantidad">
                 <i class="fa-solid fa-minus resta"></i>
                 <input type="text" value="1" class="carrito-item-cantidad" disabled>
@@ -147,27 +149,44 @@ function agregarItemAlcarrito(titulo, precio, imagenSrc) {
     item.innerHTML = itemCarritoContenido;
     itemsCarrito.append(item);
 
-    // Para eliminar ítems
+    // Agregar eventos a los botones
     item.getElementsByClassName('btn-delete')[0].addEventListener('click', eliminarItemCarrito);
-
-    var botonSumarCantidad = item.getElementsByClassName('suma')[0];
-    botonSumarCantidad.addEventListener('click', sumarCantidad);
-
-    var botonesRestarCantidad = item.getElementsByClassName('resta')[0];
-    botonesRestarCantidad.addEventListener('click', restarCantidad);
+    item.getElementsByClassName('suma')[0].addEventListener('click', sumarCantidad);
+    item.getElementsByClassName('resta')[0].addEventListener('click', restarCantidad);
 
     actualizarTotalCarrito();
 }
+
 
 function pagarClick(event) {
-    alert("Gracias por tu compra");
-    var carritoItems = document.getElementsByClassName('carrito-items')[0];
-    while (carritoItems.hasChildNodes()) {
-        carritoItems.removeChild(carritoItems.firstChild);
+    const carritoItems = document.getElementsByClassName('carrito-item');
+    const carritoDatos = [];
+
+    for (let i = 0; i < carritoItems.length; i++) {
+        const item = carritoItems[i];
+        const titulo = item.getElementsByClassName('item-title')[0].innerText;
+        const precio = item.getElementsByClassName('carrito-item-price')[0].innerText.replace('$', '').trim();
+        const cantidad = item.getElementsByClassName('carrito-item-cantidad')[0].value;
+
+        // Obtén el atributo data-id del span con clase 'item-title'
+        var id = item.querySelector('.item-title').getAttribute('data-id');
+        
+        // Verificar si el elemento con la clase 'pasarUrl' existe antes de acceder al src
+        const imagenElement = item.getElementsByClassName('pasarUrl')[0];
+        var imagenSrc = imagenElement ? imagenElement.src : ''; // Si no se encuentra la imagen, se asigna un string vacío
+
+        carritoDatos.push({ titulo, precio, cantidad, imagenSrc, id });
     }
-    actualizarTotalCarrito();
-    ocultarCarrito();
+
+    // Guardar los datos en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carritoDatos));
+
+    // Redirigir a la página de checkout
+    window.location.href = '../html/checkout.html';
 }
+
+
+
 
 function hacerVisibleCarrito() {
     carritoVisible = true;
