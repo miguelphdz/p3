@@ -324,6 +324,7 @@ nav{
     margin: 80px 80px 60px 80px;
     padding: 50px;
     display: grid;
+    gap: 60px;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(2,400px)
 
@@ -342,7 +343,7 @@ nav{
 
 .img-items{
     width: 100%;
-    height: 85%;
+    height: 25rem;
 }
 .color{
     width: 100%;
@@ -364,6 +365,9 @@ nav{
 .price a{
     text-decoration: none;
     color: black;
+}
+.price a:hover{
+    color: gray;
 }
 
 .box{
@@ -421,6 +425,7 @@ nav{
     width: 100%; 
     height: 100%; 
     backface-visibility: hidden;
+    
 }
 
 
@@ -443,7 +448,7 @@ nav{
 
 
 .card-back {
-    background-color: white;
+    background-color: #E4E4E4;
     color: black;
     transform: rotateY(180deg);
     display: flex;
