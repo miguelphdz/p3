@@ -79,3 +79,53 @@ function eliminarProducto(index) {
     }
 }
 
+// ----------------- NUEVA FUNCIÓN PARA FINALIZAR COMPRA -----------------
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("payment-form");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Evita que se envíe el formulario por defecto
+
+    // Obtener todos los inputs requeridos
+    const requiredFields = form.querySelectorAll("input[required]");
+    let allFieldsFilled = true;
+
+    requiredFields.forEach((field) => {
+      if (!field.value.trim()) {
+        allFieldsFilled = false;
+        field.style.border = "2px solid red"; // Resaltar los campos vacíos
+      } else {
+        field.style.border = ""; // Restablecer el estilo si está lleno
+      }
+    });
+
+    // Si todos los campos están llenos, mostrar mensaje de éxito
+    if (allFieldsFilled) {
+      showSuccessModal(); // Función para mostrar el modal
+    }
+  });
+
+  // Función para mostrar el modal de compra exitosa
+  function showSuccessModal() {
+    const modal = document.createElement("div");
+    modal.classList.add("modal");
+
+    modal.innerHTML = `
+      <div class="modal-content">
+        <h2>¡Compra Exitosa!</h2>
+        <p>Tu pedido ha sido procesado correctamente. ¡Gracias por tu compra!</p>
+        <button id="close-modal">Cerrar</button>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    const closeModalButton = document.getElementById("close-modal");
+    closeModalButton.addEventListener("click", () => {
+      modal.remove(); // Elimina el modal al cerrar
+      sessionStorage.clear(); // Limpia el carrito después de la compra
+      location.reload(); // Recarga la página
+    });
+  }
+});
