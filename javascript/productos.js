@@ -161,25 +161,31 @@ function agregarItemAlcarrito(idProducto, titulo, precio, imagenSrc) {
 function pagarClick(event) {
     const carritoItems = document.getElementsByClassName('carrito-item');
     const carritoDatos = [];
+    let total = 0; // Variable para almacenar el total
 
     for (let i = 0; i < carritoItems.length; i++) {
         const item = carritoItems[i];
         const titulo = item.getElementsByClassName('item-title')[0].innerText;
-        const precio = item.getElementsByClassName('carrito-item-price')[0].innerText.replace('$', '').trim();
-        const cantidad = item.getElementsByClassName('carrito-item-cantidad')[0].value;
+        const precio = parseFloat(item.getElementsByClassName('carrito-item-price')[0].innerText.replace('$', '').trim());
+        const cantidad = parseInt(item.getElementsByClassName('carrito-item-cantidad')[0].value, 10);
 
         // Obtén el atributo data-id del span con clase 'item-title'
-        var id = item.querySelector('.item-title').getAttribute('data-id');
+        const id = item.querySelector('.item-title').getAttribute('data-id');
         
         // Verificar si el elemento con la clase 'pasarUrl' existe antes de acceder al src
         const imagenElement = item.getElementsByClassName('pasarUrl')[0];
-        var imagenSrc = imagenElement ? imagenElement.src : ''; // Si no se encuentra la imagen, se asigna un string vacío
+        const imagenSrc = imagenElement ? imagenElement.src : ''; // Si no se encuentra la imagen, se asigna un string vacío
 
-        carritoDatos.push({ titulo, precio, cantidad, imagenSrc, id });
+        // Calcular subtotal para este artículo
+        const subtotal = precio * cantidad;
+        total += subtotal; // Sumar al total general
+
+        carritoDatos.push({ titulo, precio, cantidad, imagenSrc, id, subtotal });
     }
-
-    // Guardar los datos en localStorage
+    
+    // Guardar los datos del carrito y el total en localStorage
     localStorage.setItem('carrito', JSON.stringify(carritoDatos));
+    localStorage.setItem('total', total.toFixed(2)); // Guardar el total con dos decimales
 
     // Redirigir a la página de checkout
     window.location.href = '../html/checkout.html';

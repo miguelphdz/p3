@@ -2,17 +2,70 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Pasarela de Pago</title>
+    <link rel="stylesheet" href="../css/checkout.css">
+
+
+
 </head>
 <body>
-    <h1>Resumen del carrito</h1>
-    <div id="carrito-contenedor">
-        <!-- Aquí se van a insertar los productos del carrito -->
+    <header>
+        <h1>Logo</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="payment-form">
+                <h2>Finalizar Compra</h2>
+                <form id="payment-form">
+                    <!-- Información de envío -->
+                    <section class="section">
+                        <h3>Información de envío</h3>
+                        <input type="text" id="nombre" placeholder="Nombre completo" required>
+                        <input type="text" id="direccion" placeholder="Dirección" required>
+                        <input type="text" id="ciudad" placeholder="Ciudad" required>
+                        <input type="text" id="codigo-postal" placeholder="Código postal" required>
+                        <input type="tel" id="telefono" placeholder="Teléfono" required>
+                    </section>
+
+                    <!-- Información de pago -->
+                    <section class="section">
+                        <h3>Método de pago</h3>
+                        <input type="text" id="numero-tarjeta" placeholder="Número de tarjeta" required>
+                        <input type="text" id="fecha-expiracion" placeholder="MM/AA" required>
+                        <input type="text" id="cvv" placeholder="CVV" required>
+                        <input type="text" id="nombre-titular" placeholder="Nombre del titular" required>
+                        <label>
+                            <input type="checkbox" id="usar-direccion-facturacion" checked>
+                            Usar la dirección de envío como dirección de facturación
+                        </label>
+                    </section>
+
+                    <button type="submit" class="pay-now-btn">Pagar ahora</button>
+                </form>
+            </div>
+
+            <!--CHingadera 1
+            AQUI SE JALA LA INFORMACION DEL CARRITO -->
+            <aside class="order-summary">
+                <h3>Resumen del pedido</h3>
+                
+            </aside>
+        </div>
+    </main>
+
+    <div class="carrito-contenedor">
+
     </div>
-    
-    
-    <!-- Vincula el archivo JS -->
-    <script src="../js/checkout.js"></script>
+    <script type="module" src="../js/checkout.js"></script>
+
+    <!--CHingadera 2-->
+    <!-- <footer>
+        <p>Política de reembolso | Política de envío | Política de privacidad | Términos del servicio</p>
+    </footer>  -->
+
+    <script src="#"></script>
 </body>
 </html>

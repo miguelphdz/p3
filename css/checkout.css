@@ -1,0 +1,123 @@
+
+body, h1, h2, h3, p, div, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #000000;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.payment-form, .order-summary {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.payment-form h2, .order-summary h3 {
+    color: #ee89ab;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+.btn-eliminar {
+    all: unset; /* Elimina todos los estilos predeterminados */
+    background-color: #dc9ab1;
+    color: white;
+    cursor: pointer; /* Agrega el puntero para mantener la experiencia interactiva */
+    padding: 4px 8px; /* Opcional: Añade un poco de espaciado interno */
+    border-radius: 4px; /* Opcional: Bordes redondeados */
+    text-align: center; /* Centra el texto */
+}
+.btn-eliminar:hover{
+    background-color: #ff007b;
+}
+
+input[type="text"], input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pay-now-btn {
+    width: 100%;
+    padding: 15px;
+    background: #dc9ab1;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pay-now-btn:hover {
+    background: #ff007b;
+
+}
+
+.product-summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.product-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.discount-code {
+    width: calc(100% - 100px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.apply-btn {
+    padding: 10px;
+    background: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.order-totals p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.order-totals .total {
+    font-size: 18px;
+    font-weight: bold;
+}
