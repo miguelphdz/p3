@@ -32,6 +32,7 @@ nav{
     overflow: hidden; 
     width:300px;
     height:90px;
+
 }
 
 .div-logo img{
@@ -51,6 +52,12 @@ nav{
 .nav_link{
     text-decoration: none;
     color: black;
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Transición suave para hover */
+}
+.nav_link:hover {
+    color: #E6007E; /* Cambia el color a azul */
 }
 
 .nav-list li{
@@ -65,6 +72,7 @@ nav{
     align-items: center;
     gap: 10px;
     padding: 20px 30px 20px 30px ;
+    transform: scale(1.2); /* Incrementa el tamaño un 10% */
 }
 
 .btn{
@@ -72,6 +80,7 @@ nav{
     border-radius: 10px;
     width: 70px;
     height: 50px;
+
 }
 
 .btn a{
@@ -226,15 +235,20 @@ nav{
 
 .element:nth-child(1) {
     background-image: url('../WEB/bordados.jpg'); 
-    
+    border-radius: 5px;
+
 }
 
 .element:nth-child(2) {
     background-image: url('../WEB/moda.jpg'); 
+    border-radius: 5px;
+
 }
 
 .element:nth-child(3) {
     background-image: url('../WEB/Acces.jpg'); 
+    border-radius: 5px;
+
 }
 
 .btn-element {
@@ -252,6 +266,9 @@ nav{
     top: 50%; /* Mueve el centro hacia la mitad */
     left: 50%; /* Mueve el centro hacia la mitad */
     transform: translate(-50%, -50%); /* Asegura que el botón esté perfectamente centrado */
+    border-radius: 5px;
+
+    
 }
 
 .btn-element a {
@@ -260,6 +277,7 @@ nav{
     font-size: 20px;
     color: #ffdbf2;
     z-index: 1;
+    
 }
 
 .element:hover .btn-element{
@@ -271,6 +289,7 @@ nav{
 .element {
     position: relative;
     transition: opacity 0.5s ease; /* Transición suave */
+    
 }
 
 
@@ -315,6 +334,8 @@ nav{
     margin: 20px;
     display: flex;
     flex-direction: column;
+    
+
 }
 
 
@@ -346,7 +367,12 @@ nav{
 }
 
 .box{
+    display: flex;
+    background-size: cover;
+    background-position: center;
     width: 100%;
+    justify-content:center;
+    align-items: center;
     height: 400px;
     margin: 0;
     background: url(../WEB/tela.jpg) top / cover fixed rgb(255, 255, 255);
@@ -359,6 +385,7 @@ nav{
     align-items: flex-start;
     padding: 60px 90px;
     margin-top: 50px;
+    
 }
 
 .card{
@@ -460,9 +487,45 @@ nav{
 
 /* Style the footer */
 footer {
-    width: 100%;
-    background-color: #000000;
-    padding: 20px;
-    text-align: justify;
+    
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    background-attachment: fixed;
+  }
+  .footer-container {
+    background-color: rgba(51, 51, 51, 0.8); /* Fondo semitransparente */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+  }
+  .footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+  }
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #f4f4f4;
+  }
+  .footer-section p,
+  .footer-section a {
+    font-size: 14px;
+    color: #ccc;
+    text-decoration: none;
+    margin: 5px 0;
+    display: block;
+  }
+  .footer-section a:hover {
+    color: #fff;
+  }
+  .footer-bottom {
+    margin-top: 20px;
+    font-size: 12px;
     color: white;
-}
+  }

@@ -21,6 +21,6 @@ async function login(event) {
         console.log("Inicio de sesión exitoso:", data);
         alert("Bienvenido/a. Inicio de sesión exitoso.");
         // Redirige al usuario a la página principal de la tienda después del inicio de sesión
-        window.location.href = "/index.html";
+        window.location.href = "../html/home.html";
     }
 }

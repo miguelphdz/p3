@@ -3,317 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <script src="https://kit.fontawesome.com/7ee3434711.js" crossorigin="anonymous"></script>
+    <title>Inicio de sesión</title>
+    <link rel="icon" href="fave.png" type="image/png">
+    <link rel="stylesheet" href="../css/styleLogin.css">
 </head>
+
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script>
+        window.onload = function() {
+            const SUPABASE_URL = 'https://vnkohvizfizhindrprxj.supabase.co';
+            const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZua29odml6Zml6aGluZHJwcnhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE1Mzk2NzQsImV4cCI6MjA0NzExNTY3NH0.bdnM5VJcQqsMPSQgdLmZQ-d6OLxT1Je-s5N2uPgWWAw';
     
-        <header>
-            <nav>
-                <div class="div-logo">
-                    <img src="WEB/logo2.png" alt="logo">
-                </div>
-                <ul class="nav-list">
-                    <li><a href="#" class="nav_link">Inicio</a></li>
-                    <li><a href="html/products.html" class="nav_link">Productos</a></li>
-                    <li><a href="#" class="nav_link">Nosotros</a></li>
-                </ul>
+            const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    
+            const container = document.getElementById('container');
+            const registerBtn = document.getElementById('register');
+            const loginBtn = document.getElementById('login');
 
-                <div class="icons">
-                    <div class="btn">
-                        <a href="#"> 
-                            <img src="WEB/cora.png" alt="c">
-                        </a>                     
-                    </div>
+            registerBtn.addEventListener('click', () => {
+                container.classList.add("active");
+            });
 
-                    <div class="btn">
-                        <a href="html/login.html">
-                            <img src="WEB/usuario.png" alt="c">
-                        </a>
-                    </div>  
-                        
-                    <div class="btn">
-                        <a href="#">
-                            <img src="WEB/b2.png" alt="c">
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <section class="main">    
-            <!--CARRUSEL-->
-            <div id="container-carousel">
-                <div class="itemCarousel" id="C1">
-                    <div class="item-Carousel-img" id="imgC1">
-                        <img src="WEB/R.jpeg" alt="">
-                    </div>
-                    <div class="arrows">
-                        <a href="#C3">
-                            <i class="fa-solid fa-chevron-left"></i>
-                        </a>
-                        <a href="#C2">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="itemCarousel" id="C2">
-                    <div class="item-Carousel-img" id="imgC2">
-                        <img src="WEB/main.jpg" alt="">
-                    
-                    </div>
-                    <div class="arrows">
-                        <a href="#C1">
-                            <i class="fa-solid fa-chevron-left"></i>
-                        </a>
-                        <a href="#C3">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="itemCarousel" id="C3">
-                    <div class="item-Carousel-img" id="imgC3">
-                        <img src="WEB/ima.png" alt="">
-                    </div>
-                    <div class="arrows">
-                        <a href="#C2">
-                            <i class="fa-solid fa-chevron-left"></i>
-                        </a>
-                        <a href="#C1">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="navPuntos">
-                <a href="#C1">
-                    <i class="fa-regular fa-circle"></i>
-                </a>
-                <a href="#C2">
-                    <i class="fa-regular fa-circle"></i>
-                </a>
-                <a href="#C3">
-                    <i class="fa-regular fa-circle"></i>
-                </a>
-            </div>
-            
-
-            
-            <main>
-                <div class="info">
-                    <div class="info-grid">
-                        <div class="icon-info">
-                            <img src="WEB/m.png" alt="o">
-                        </div>
-                        <div class="info-item">
-                            <h2>Cotiza con noostros</h2>
-                            <p>para obtener prendas artesanales purépechas personalizadas que destacan por su autenticidad y calidad.</p>
-                        </div>
-                    </div>
-                    <div class="info-grid">       
-                        <div class="icon-info">
-                            <img src="WEB/regalito.png" alt="o">
-                        </div>
-                        <div class="info-item">
-                            <h2>Compra con nosotros</h2>
-                            <p>lleva una pieza artesanal purépecha a tu colección, hecha a mano con amor y dedicación.</p>
-                        </div>
-                    </div>
-                    <div class="info-grid" > 
-                        <div class="icon-info">
-                            <img src="WEB/estrella.png" alt="o">
-                        </div>
-                        <div class="info-item">  
-                            <h2>Inspirate</h2>
-                            <p> Adaptamos nuestros diseños a tus necesidades, selecciona tu diseño favorito.</p>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="container-elements">
-                    <div class="element">
-                        <div class="btn-element">
-                            <a href="">BORDADO</a>
-                        </div>
-                    </div>
-                    <div class="element">
-                        <div class="btn-element">
-                            <a href="">MODA</a>
-                        </div>
-                    </div>
-                    <div class="element">
-                        <div class="btn-element">
-                            <a href="">ACCESORIOS</a>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </section>
+            loginBtn.addEventListener('click', () => {
+                container.classList.remove("active");
+            });
+    
+    
+            async function login(event) {
+                event.preventDefault();
         
-        <!--Seccion productos destacados-->
-
-        <section class="container-products">
-            <h1>PRODUCTOS DESTACADOS</h1>
-            <div class="grid">
-                <div class="grid-item">
-                    <div class="img-items">
-                        <img src="WEB/bor.jpg " class="color" alt="">
-                    </div>
-                    <div class="price">
-                        <a href="#">Camisa bordada </a>
-                        <h3>$1200 mx </h3>
-                    </div>
-                </div>
-                <div class="grid-item">
-                    <div class="img-items">
-                        <img src="WEB/tej.png" class="color" alt="">
-                    </div>
-                    <div class="price">
-                        <a href="#">Camisa bordada </a>
-                        <h3>$1200</h3>
-                    </div>
-
-                </div>
-                <div class="grid-item">
-
-                    <div class="img-items">
-                        <img src="WEB/cam.png" class="color" alt="">
-                    </div>
-                    <div class="price">
-                        <a href="#">Camisa bordada </a>
-                        <h3>$1200</h3>
-                    </div>
-
-                </div>
-                <div class="grid-item">
-                    <div class="img-items">
-                        <img src="WEB/blusa1.png" class="color" alt="">
-                    </div>
-                    <div class="price">
-                        <a href="#">Camisa bordada </a>
-                        <h3>$1200</h3>
-                    </div>
-
-                </div>
-                <div class="grid-item">
-                    <div class="img-items">
-                        <img src="WEB/blusa2.png" class="color" alt="">
-                    </div>
-                    <div class="price">
-                        <a href="#">Camisa bordada </a>
-                        <h3>$1200</h3>
-                    </div>
-
-                </div>
-                <div class="grid-item">
-                    <div class="img-items">
-                        <img src="WEB/r.png"class="color" alt="">
-                    </div>
-                    <div class="price">
-                        <a href="#">Camisa bordada </a>
-                        <h3>$1200</h3>
-                    </div>
-
-                </div>
-                <div class="grid-item">
-                    <div class="img-items">
-                        <img src="WEB/rop.png" class="color" alt="">
-                    </div>
-                    <div class="price">
-                        <a href="#">Camisa bordada </a>
-                        <h3>$1200</h3>
-                    </div>
-
-                </div>
-                <div class="grid-item">
-                    <div class="img-items">
-                        <img src="WEB/blu.png" class="color" alt="">
-                    </div>
-                    <div class="price">
-                        <a href="#">Camisa bordada </a>
-                        <h3>$1200</h3>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <div class="box">
-            
-        </div>
-
-        <!--Seccion tarjetas -->
-        <section class="content-cards">
-            <div class="card card-left">
-                <div class="card-inner">
-                    <div class="card-front-l"></div>
-                    <div class="card-back">         
-                        <h1>Hola</h1>
-                        <br>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos fugit obcaecati sunt non quo aperiam, culpa perspiciatis quas, provident illo ipsa ullam reiciendis rerum error laudantium voluptate porro sint minus!</p>
-                    </div>
-                </div>
-            </div>
+                const correo = document.querySelector('input[name="correo"]').value;
+                const contraseña = document.querySelector('input[name="contraseña"]').value;
         
-            <div class="card card-right">
-                <div class="card-inner">
-                    <div class="card-front-r"></div>
-                    <div class="card-back">
-                        <h1>Materiales</h1>
-                        <p>Cada pieza es creada con materiales que respetan la naturaleza, utilizando fibras naturales como el algodón y lana, tejidos a mano con tradición y dedicación.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                const { data, error } = await supabase.auth.signInWithPassword({
+                    email: correo,
+                    password: contraseña,
+                });
         
+                if (error) {
+                    console.error("Error al iniciar sesión:", error.message);
+                    alert("Error al iniciar sesión: " + error.message);
+                } else {
+                    console.log("Inicio de sesión exitoso:", data);
+                    alert("Bienvenido/a. Inicio de sesión exitoso.");
+                    // Redirige al usuario a la página principal de la tienda después del inicio de sesión
+                    window.location.href = "/html/home.html";
+                }
+            }
+            async function signup(event) {
+                event.preventDefault();
+    
+                const nombre = document.querySelector('input[placeholder="Nombre"]').value;
+                const correo = document.querySelector('input[placeholder="Correo"]').value;
+                const contraseña = document.querySelector('input[placeholder="Contraseña"]').value;
+    
+                const { data, error } = await supabase.auth.signUp({
+                    email: correo,
+                    password: contraseña,
+                    options: {
+                        data: {
+                            nombre: nombre
+                        }
+                    }
+                });
+    
+                if (error) {
+                    console.error("Error al registrarse:", error.message);
+                    alert("Error al registrarse: " + error.message);
+                } else {
+                    console.log("Usuario registrado:", data);
+                    alert("Registro exitoso. Revisa tu correo para verificarlo..");
+                }
+        }
+    
+            // Asigna la función login a window para que esté disponible globalmente
+            window.login = login;
+           window.signup = signup;
+        };
+    </script>
 
-        <div class="box">
-            
-        </div>
-
-        <!--
-        <footer class="custom-footer">
-            <div class="company-name">
-                Company
-            </div>
-            
-            <div class="footer-logo">
-                <img src="logo.png" alt="Logo" class="logo">
-            </div>
-            
-            
-
-            <nav class="footer-nav">
-                <a href="#nosotros">Nosotros</a>
-                <a href="#contacto">Contacto</a>
-                <a href="#productos">Productos</a>
-            </nav>
-        </footer> -->
-        <div class="fondo">
-            <div class="grid_footer">
-                <div>Nosotros</div>
-                <div>Contacto</div>
-                <div>Redes Sociales</div>
-                <div>Registrate</div>
-                <div>About</div>
-                <div>hola</div>
-                <div>hola</div>
-                <div>hola</div>
-                <div>About</div>
-                <div>hola</div>
-                <div>hola</div>
-                <div>hola</div>
-            </div>
-        </div>
-        <footer>
-            2024 Paarakata. all rights reverved
-        </footer>
-        <script src="javascript/main.js"></script>
+<body>
+    <!--INICIAR SESION-->
+      <div class="container" id="container">
+          <div class="form-container sign-up">
+              <form>
+                  <h1>Crear cuenta</h1>
+                  <input type="text" placeholder="Nombre">
+                  <input type="email" placeholder="Correo">
+                  <input type="password" placeholder="Contraseña">
+                  <button onclick="signup(event)">Registrate</button>
+              </form>
+          </div>
+          <div class="form-container sign-in">
+              <form>
+                  <h1>Iniciar sesión</h1>
+                  <input type="email" placeholder="Correo" name="correo">
+                  <input type="password" placeholder="Contraseña" name="contraseña">
+                  <button type="submit" onclick="login(event)">Iniciar sesión</button>
+              </form>
+          </div>
+  
+            <!--INICIAR SESION-->
+          <div class="toggle-container">
+              <div class="toggle">
+                  <div class="toggle-panel toggle-left">
+                      <h1>¿Listo?</h1>
+      
+                      <button class="hidden" id="login">Iniciar sesion</button>
+                  </div>
+                  
+                  <div class="toggle-panel toggle-right">
+                      <h1>Hola!</h1>
+                      <p >si no tienes cuenta personal</p>
+                      
+                      <button class="hidden" id="register">Registrate</button>
+                  </div>
+              </div>
+          </div>
+      </div>
 </body>
 </html>
-
 
