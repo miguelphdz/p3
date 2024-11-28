@@ -1,9 +1,8 @@
-
-// Cargamos los localStorage
-const carritoDatos = JSON.parse(localStorage.getItem('carrito')) || [];
+// Cargamos los sessionStorage
+const carritoDatos = JSON.parse(sessionStorage.getItem('carrito')) || [];
 
 // Agregar console.log para verificar los datos del carrito
-console.log("Carrito cargado desde localStorage:", carritoDatos);
+console.log("Carrito cargado desde sessionStorage:", carritoDatos);
 
 // Convertir el id de cada producto a un número entero
 carritoDatos.forEach(item => {
@@ -63,7 +62,7 @@ if (carritoDatos.length > 0) {
 function eliminarProducto(index) {
     carritoDatos.splice(index, 1); // Eliminar el producto del arreglo
     total = carritoDatos.reduce((acc, item) => acc + item.precio * item.cantidad, 0); // Recalcular el total
-    localStorage.setItem('carrito', JSON.stringify(carritoDatos)); // Actualizar localStorage
+    sessionStorage.setItem('carrito', JSON.stringify(carritoDatos)); // Actualizar sessionStorage
 
     // Actualizar el DOM
     const productoDiv = document.querySelector(`.producto-checkout[data-index="${index}"]`);
@@ -80,4 +79,3 @@ function eliminarProducto(index) {
     }
 }
 
-// Importa el cliente de Supabase

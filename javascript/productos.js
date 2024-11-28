@@ -183,9 +183,10 @@ function pagarClick(event) {
         carritoDatos.push({ titulo, precio, cantidad, imagenSrc, id, subtotal });
     }
     
-    // Guardar los datos del carrito y el total en localStorage
-    localStorage.setItem('carrito', JSON.stringify(carritoDatos));
-    localStorage.setItem('total', total.toFixed(2)); // Guardar el total con dos decimales
+    // Guardar los datos del carrito y el total en sessionStorage
+    sessionStorage.setItem('carrito', JSON.stringify(carritoDatos));
+    sessionStorage.setItem('total', total.toFixed(2)); // Guardar el total con dos decimales
+
 
     // Redirigir a la página de checkout
     window.location.href = '../html/checkout.html';
